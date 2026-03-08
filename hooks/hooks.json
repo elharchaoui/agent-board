@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f agent_board.py ]; then echo '=== Agent Board ==='; python3 agent_board.py list --status claimed 2>/dev/null; python3 agent_board.py list --status in_progress 2>/dev/null; python3 agent_board.py list --status blocked 2>/dev/null; echo \"Tip: claim a task before editing — 'python3 agent_board.py claim T-XXX --agent <you>'\"; fi"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport sys, json, subprocess, os\ntry:\n    data = json.load(sys.stdin)\nexcept Exception:\n    sys.exit(0)\ncmd = data.get('tool_input', {}).get('command', '')\nif 'git commit' in cmd and os.path.exists('agent_board.py'):\n    r = subprocess.run(\n        ['python3', 'agent_board.py', 'validate',\n         '--statuses', 'claimed,in_progress,blocked',\n         '--require-next', '--require-handoff'],\n        capture_output=True, text=True\n    )\n    if r.returncode != 0:\n        print(r.stdout, file=sys.stderr)\n        sys.exit(2)\n\""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agent-board",
+  "description": "Lightweight in-repo task board for AI agents. Tracks work via Markdown files with structured frontmatter — claim tasks, log progress, and declare handoffs without leaving the repository.",
+  "version": "0.1.0",
+  "author": {
+    "name": "elharchaoui"
+  },
+  "repository": "https://github.com/elharchaoui/agent-board",
+  "license": "MIT",
+  "keywords": ["tasks", "board", "agents", "workflow", "handoff"]
+}

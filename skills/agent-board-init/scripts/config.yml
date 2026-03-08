@@ -1,0 +1,16 @@
+default_ttl_minutes: 120
+statuses:
+  - backlog
+  - ready
+  - claimed
+  - in_progress
+  - blocked
+  - review
+  - done
+labels:
+  - backend
+  - frontend
+  - docs
+  - infra
+  - qa
+  - research

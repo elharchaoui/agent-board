@@ -1,7 +1,7 @@
 {
   "name": "agent-board",
   "description": "Lightweight in-repo task board for AI agents. Tracks work via Markdown files with structured frontmatter — claim tasks, log progress, and declare handoffs without leaving the repository.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "elharchaoui"
   },

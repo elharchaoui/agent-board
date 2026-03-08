@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Lightweight in-repo task board for AI agents",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "plugins": [
     {
@@ -15,7 +15,7 @@
         "repo": "elharchaoui/agent-board"
       },
       "description": "Claim tasks, log progress, and declare handoffs using Markdown files tracked in Git.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }

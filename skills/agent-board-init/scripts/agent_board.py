@@ -152,9 +152,9 @@ def cmd_list(args):
         status = front.get("status", "unknown")
         if args.status and status != args.status:
             continue
-        title = front.get("title", "")
-        owner = front.get("owner", "")
-        claimed_by = front.get("claimed_by", "")
+        title = front.get("title", "") or ""
+        owner = front.get("owner", "") or ""
+        claimed_by = front.get("claimed_by", "") or ""
         print(f"{task_id:10} {status:12} {owner:10} {claimed_by:10} {title}")
 
 
